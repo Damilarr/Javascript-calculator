@@ -4,13 +4,11 @@ let hOneValue;
 let finalAns;
 let firstValue ='';
 let secondValue = '';
-let inp;
 function display(value){ 
     // if (finalAns){
     //     hOneValue = ''
     //      console.log('noooooooooo');
     // }
-    inp = value
     if (h1.innerHTML == 0){
         document.getElementById('h1').innerHTML= '';
     }
@@ -19,9 +17,7 @@ function display(value){
         document.getElementById('h6').innerHTML = " "
     }
    
-    document.getElementById('h1').innerHTML += inp;
-   
-  
+    document.getElementById('h1').innerHTML += value;
 }
 function clearScreen(type){
     if (type == 'C'){
@@ -80,7 +76,7 @@ function plusOrMinus(){
     document.getElementById('h1').innerHTML = finalAns;
 }
 function operator(op){
-    if (hOneValue) {
+    if (opera) {
         equal()
     }
     opera=op
@@ -88,7 +84,6 @@ function operator(op){
     document.getElementById('h6').innerHTML = `${hOneValue} ${opera}`;
     document.getElementById('h1').innerHTML = " ";
 }
-
 function equal(){
     firstValue = hOneValue
     secondValue = document.getElementById('h1').innerHTML
@@ -108,4 +103,10 @@ function equal(){
 
     h6.innerHTML =`${firstValue} ${opera} ${secondValue} =`
     h1.innerHTML = finalAns;
+    if (finalAns){
+        opera ="";
+        // hOneValue += 0;
+        // firstValue += 0;
+        // secondValue += 0;
+    }
 }
